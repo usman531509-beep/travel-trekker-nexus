@@ -80,7 +80,7 @@ const Dashboard = () => {
         .select(`
           *,
           listings!inner (title, type),
-          profiles!bookings_user_id_fkey (full_name, email)
+          profiles!user_id (full_name, email)
         `);
       
       if (isSubAdmin) {
