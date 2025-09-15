@@ -87,78 +87,120 @@ const Home = () => {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-gradient-subtle">
         {/* Hero Section */}
-        <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Your Gateway to Amazing Experiences
+        <div className="bg-gradient-hero text-white relative overflow-hidden">
+          {/* Floating elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full animate-float"></div>
+            <div className="absolute top-40 right-32 w-24 h-24 bg-white/5 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+            <div className="absolute bottom-40 left-1/3 w-16 h-16 bg-white/10 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
+          </div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div className="text-center animate-fade-in-up">
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                Your Gateway to Amazing 
+                <span className="block text-yellow-200">Experiences</span>
               </h1>
-              <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
-                Book hotels, trips, and cars all in one place
+              <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Discover and book the perfect hotels, unforgettable trips, and premium car rentals 
+                all in one beautiful platform
               </p>
-              <Button 
-                size="lg" 
-                variant="secondary"
-                onClick={() => navigate('/auth')}
-                className="text-lg px-8 py-3"
-              >
-                Get Started Today
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  size="lg" 
+                  variant="secondary"
+                  onClick={() => navigate('/auth')}
+                  className="text-lg px-8 py-4 shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-105 bg-white text-primary hover:bg-white/90"
+                >
+                  Start Your Journey
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10 transition-all duration-300"
+                >
+                  Explore Listings
+                </Button>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Features Section */}
-        <div className="py-16 bg-muted/30">
+        <div className="py-24 bg-gradient-subtle">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
+            <div className="text-center mb-16 animate-fade-in">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Everything You Need for Your Journey
               </h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Discover and book the perfect accommodations, experiences, and transportation
+                with our premium platform
               </p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              <Card>
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Building className="w-6 h-6 text-primary" />
+              <Card className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 bg-gradient-card border-0 animate-fade-in" style={{animationDelay: '0.1s'}}>
+                <CardHeader className="text-center pb-8">
+                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:animate-glow shadow-elegant">
+                    <Building className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle>Hotels & Stays</CardTitle>
-                  <CardDescription>
-                    Find the perfect accommodation for your trip, from luxury hotels to cozy apartments
+                  <CardTitle className="text-2xl mb-4">Luxury Hotels & Stays</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">
+                    From boutique hotels to luxury resorts, find the perfect accommodation 
+                    that matches your style and budget
                   </CardDescription>
                 </CardHeader>
               </Card>
               
-              <Card>
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Plane className="w-6 h-6 text-primary" />
+              <Card className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 bg-gradient-card border-0 animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <CardHeader className="text-center pb-8">
+                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:animate-glow shadow-elegant">
+                    <Plane className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle>Travel Experiences</CardTitle>
-                  <CardDescription>
-                    Discover unique trips and experiences curated by local experts
+                  <CardTitle className="text-2xl mb-4">Curated Experiences</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">
+                    Discover unique trips and experiences curated by local experts and 
+                    adventure specialists around the world
                   </CardDescription>
                 </CardHeader>
               </Card>
               
-              <Card>
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Car className="w-6 h-6 text-primary" />
+              <Card className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 bg-gradient-card border-0 animate-fade-in" style={{animationDelay: '0.3s'}}>
+                <CardHeader className="text-center pb-8">
+                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:animate-glow shadow-elegant">
+                    <Car className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle>Car Rentals</CardTitle>
-                  <CardDescription>
-                    Rent a car for your adventures, from economy to luxury vehicles
+                  <CardTitle className="text-2xl mb-4">Premium Car Rentals</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">
+                    Rent premium vehicles for your adventures, from efficient city cars 
+                    to luxury sports cars and off-road vehicles
                   </CardDescription>
                 </CardHeader>
               </Card>
             </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="py-20 bg-gradient-primary text-white">
+          <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Start Your Adventure?
+            </h3>
+            <p className="text-xl mb-8 text-white/90">
+              Join thousands of travelers who trust us with their journeys
+            </p>
+            <Button 
+              size="lg" 
+              variant="secondary"
+              onClick={() => navigate('/auth')}
+              className="text-lg px-8 py-4 shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-105"
+            >
+              Create Your Account
+            </Button>
           </div>
         </div>
       </div>
@@ -166,122 +208,149 @@ const Home = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-subtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Search Section */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground mb-6">
-            Discover Your Next Adventure
-          </h1>
+        <div className="mb-12 animate-fade-in">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 bg-gradient-primary bg-clip-text text-transparent">
+              Discover Your Next Adventure
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Find and book amazing experiences from our curated collection
+            </p>
+          </div>
           
-          <div className="flex flex-col md:flex-row gap-4 mb-6">
-            <div className="flex-1">
+          <div className="max-w-2xl mx-auto mb-8">
+            <div className="relative">
               <Input
                 placeholder="Search destinations, hotels, trips..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="h-12"
+                className="h-14 pl-12 text-lg shadow-card border-0 bg-card/50 backdrop-blur-sm"
               />
+              <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+                <div className="w-6 h-6 bg-gradient-primary rounded-full flex items-center justify-center">
+                  <div className="w-4 h-4 border-2 border-white rounded-full"></div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <Tabs value={selectedType} onValueChange={(value) => setSelectedType(value as any)}>
-            <TabsList>
-              <TabsTrigger value="all">All</TabsTrigger>
-              <TabsTrigger value="hotel">Hotels</TabsTrigger>
-              <TabsTrigger value="trip">Trips</TabsTrigger>
-              <TabsTrigger value="car">Cars</TabsTrigger>
-            </TabsList>
-          </Tabs>
+          <div className="flex justify-center">
+            <Tabs value={selectedType} onValueChange={(value) => setSelectedType(value as any)}>
+              <TabsList className="grid w-full grid-cols-4 max-w-md shadow-card bg-card/50 backdrop-blur-sm">
+                <TabsTrigger value="all" className="text-sm font-medium">All</TabsTrigger>
+                <TabsTrigger value="hotel" className="text-sm font-medium">Hotels</TabsTrigger>
+                <TabsTrigger value="trip" className="text-sm font-medium">Trips</TabsTrigger>
+                <TabsTrigger value="car" className="text-sm font-medium">Cars</TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
         </div>
 
         {/* Listings */}
         {loading ? (
-          <div className="flex justify-center items-center py-12">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+          <div className="flex justify-center items-center py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-4 border-primary"></div>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredListings.map((listing) => (
-              <Card key={listing.id} className="hover:shadow-lg transition-shadow cursor-pointer">
-                <div 
-                  onClick={() => navigate(`/listing/${listing.id}`)}
-                  className="h-full"
-                >
-                  <div className="h-48 bg-muted rounded-t-lg flex items-center justify-center">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredListings.map((listing, index) => (
+              <Card 
+                key={listing.id} 
+                className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 cursor-pointer bg-gradient-card border-0 overflow-hidden animate-fade-in" 
+                style={{animationDelay: `${index * 0.1}s`}}
+                onClick={() => navigate(`/listing/${listing.id}`)}
+              >
+                <div className="relative">
+                  <div className="h-56 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center overflow-hidden">
                     {listing.image_url ? (
                       <img 
                         src={listing.image_url} 
                         alt={listing.title}
-                        className="w-full h-full object-cover rounded-t-lg"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     ) : (
-                      <div className="text-muted-foreground text-4xl">
+                      <div className="text-primary/40 text-6xl group-hover:scale-110 transition-transform duration-500">
                         {getTypeIcon(listing.type)}
                       </div>
                     )}
                   </div>
                   
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-2">
-                      <Badge variant="secondary" className={getTypeColor(listing.type)}>
-                        <span className="flex items-center space-x-1">
-                          {getTypeIcon(listing.type)}
-                          <span className="capitalize">{listing.type}</span>
-                        </span>
-                      </Badge>
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-gradient-primary text-white shadow-elegant border-0">
+                      <span className="flex items-center space-x-1">
+                        {getTypeIcon(listing.type)}
+                        <span className="capitalize font-medium">{listing.type}</span>
+                      </span>
+                    </Badge>
+                  </div>
+                  
+                  <div className="absolute top-4 right-4">
+                    <div className="bg-card/90 backdrop-blur-sm rounded-lg px-3 py-1 shadow-elegant">
                       <span className="text-lg font-bold text-primary">
                         ${listing.price}
-                        {listing.type === 'hotel' && '/night'}
-                        {listing.type === 'car' && '/day'}
+                        <span className="text-sm text-muted-foreground">
+                          {listing.type === 'hotel' && '/night'}
+                          {listing.type === 'car' && '/day'}
+                        </span>
                       </span>
                     </div>
-                    
-                    <CardTitle className="text-lg">{listing.title}</CardTitle>
-                    
-                    <div className="flex items-center text-sm text-muted-foreground space-x-4">
-                      <div className="flex items-center space-x-1">
-                        <MapPin className="w-4 h-4" />
-                        <span>{listing.location}</span>
-                      </div>
-                      {listing.max_guests && (
-                        <div className="flex items-center space-x-1">
-                          <Users className="w-4 h-4" />
-                          <span>{listing.max_guests} guests</span>
-                        </div>
-                      )}
-                    </div>
-                  </CardHeader>
+                  </div>
+                </div>
+                
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors duration-300">
+                    {listing.title}
+                  </CardTitle>
                   
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                      {listing.description}
-                    </p>
-                    
-                    {listing.amenities && listing.amenities.length > 0 && (
-                      <div className="flex flex-wrap gap-1">
-                        {listing.amenities.slice(0, 3).map((amenity, index) => (
-                          <Badge key={index} variant="outline" className="text-xs">
-                            {amenity}
-                          </Badge>
-                        ))}
-                        {listing.amenities.length > 3 && (
-                          <Badge variant="outline" className="text-xs">
-                            +{listing.amenities.length - 3} more
-                          </Badge>
-                        )}
+                  <div className="flex items-center text-sm text-muted-foreground space-x-4 mb-3">
+                    <div className="flex items-center space-x-1">
+                      <MapPin className="w-4 h-4" />
+                      <span>{listing.location}</span>
+                    </div>
+                    {listing.max_guests && (
+                      <div className="flex items-center space-x-1">
+                        <Users className="w-4 h-4" />
+                        <span>{listing.max_guests} guests</span>
                       </div>
                     )}
-                  </CardContent>
-                </div>
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="pt-0">
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2 leading-relaxed">
+                    {listing.description}
+                  </p>
+                  
+                  {listing.amenities && listing.amenities.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {listing.amenities.slice(0, 3).map((amenity, amenityIndex) => (
+                        <Badge key={amenityIndex} variant="outline" className="text-xs px-2 py-1 bg-muted/50">
+                          {amenity}
+                        </Badge>
+                      ))}
+                      {listing.amenities.length > 3 && (
+                        <Badge variant="outline" className="text-xs px-2 py-1 bg-primary/10 text-primary">
+                          +{listing.amenities.length - 3} more
+                        </Badge>
+                      )}
+                    </div>
+                  )}
+                </CardContent>
               </Card>
             ))}
           </div>
         )}
 
         {filteredListings.length === 0 && !loading && (
-          <div className="text-center py-12">
-            <p className="text-lg text-muted-foreground">No listings found matching your criteria.</p>
+          <div className="text-center py-20 animate-fade-in">
+            <div className="w-24 h-24 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="text-4xl text-white">🔍</div>
+            </div>
+            <h3 className="text-2xl font-bold text-foreground mb-2">No listings found</h3>
+            <p className="text-lg text-muted-foreground">Try adjusting your search criteria or browse all listings.</p>
           </div>
         )}
       </div>
